@@ -18,6 +18,7 @@ install:
   - ps: move libpng*\* deps -force
   - move deps\libpng16_static.lib deps\png.lib
   - cmd: cmake -DZLIB_LIBRARY=deps\zlib.lib -DZLIB_INCLUDE_DIR=deps\zlib.lib -DPNG_LIBRARY=deps\png.lib -DPNG_PNG_INCLUDE_DIR=deps\png.lib .
+  - cmd: dir
   - cmd: c:\MinGW\bin\make.exe -f C:/projects/png2tile/Makefile
 
 artifacts:
