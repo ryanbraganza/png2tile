@@ -9,6 +9,7 @@ before_build:
   - cmd: dir
 
 install:
+  - copy c:\MinGW\bin\mingw32-make.exe c:\MinGW\bin\make.exe
   - md deps
   - nuget install zlib-msvc14-x64-master -Version 1.2.8.4 -Source https://ci.appveyor.com/nuget/zlib-shallow-x0n34b3pfq1b
   - ps: move zlib*\* deps -force
