@@ -1,0 +1,17 @@
+# Specify version format
+version: "{build}"
+
+# Operating system (build VM template)
+os: Visual Studio 2015
+
+# scripts to run before build
+before_build:
+  - cmd: dir
+
+install:
+  - cmd: cmake .
+  - cmd: make
+
+artifacts:
+  - path: png2tile
+    name: png2tile
