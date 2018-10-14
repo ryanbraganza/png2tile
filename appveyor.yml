@@ -16,11 +16,7 @@ install:
   - nuget install libpng-msvc14-x64-master -Version 1.6.18.44 -Source https://ci.appveyor.com/nuget/libpng-7hwq4pmmrc48
   - ps: move libpng*\* deps -force
   - move deps\libpng16_static.lib deps\png.lib
-  - set ZLIB_LIBRARY=deps\zlib.lib
-  - set ZLIB_INCLUDE_DIR=deps\zlib.lib
-  - set PNG_INCLUDE_DIR=deps\png.lib
-  - set PNG_LIBRARY=deps\png.lib
-  - cmd: cmake .
+  - cmd: cmake -DZLIB_INCLUDE_DIR=deps\zlib.lib -DPNG_INCLUDE_DIR=deps\png.lib .
   - cmd: make
 
 artifacts:
